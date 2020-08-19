@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
 function Chart() {
-    return (
-        <div>
-            <h1>Charts</h1>
-        </div>
-    )
+  const [dailyData, setDailyData] = useState({});
+
+  useEffect(() => {});
+  return (
+    <div>
+      <h1>Charts</h1>
+    </div>
+  );
 }
 
-export default Chart
+export default Chart;

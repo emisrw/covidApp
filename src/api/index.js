@@ -5,15 +5,22 @@ const proxy = "https://cors-anywhere.herokuapp.com/";
 export const fetchData = async () => {
   try {
     const {
-      data: { confirmed, recorvered, deaths, lastUpdate },
+      data: { confirmed, recovered, deaths, lastUpdate },
     } = await axios.get(`${proxy}${url}`);
     const modifiedData = {
       confirmed,
-      recorvered,
+      recovered,
       deaths,
       lastUpdate,
     };
 
     return modifiedData;
+  } catch (error) {}
+};
+
+export const fetchDailyDate = async () => {
+  try {
+    const data = await axios.get(`${proxy}${url}/daily`);
+    console.log(data);
   } catch (error) {}
 };
